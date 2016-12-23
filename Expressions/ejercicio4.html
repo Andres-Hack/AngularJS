@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Expreciones 4</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+  <h1>Concatenacion de String</h1>
+  <hr>
+  <form class="" action="" method="post" ng-init="nombre='Nombre';apellido='Apellido'">
+    Ingrese su nombre: <input type="text" ng-model="nombre"><br>
+    Ingrese su apellido : <input type="text" ng-model="apellido"><br><hr>
+    mi nombre completo es <label ng-bind="nombre+' '+apellido"></label>
+  </form>
+  <h1>Concatenacion de String y Vector</h1>
+  <hr>
+  <form class="" action="" method="post" ng-init="dato1=[1,2,3,'Andres'];dato2=[4,5,6,'Mamani']">
+    Mis datos son <label ng-bind="dato1[3]+' '+dato2[0]"></label>
+  </form>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+  </script>
+</body>
+</html>

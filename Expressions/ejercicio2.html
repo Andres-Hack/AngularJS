@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Expreciones 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+  <h1>SUMA DE DOS NUMEROS</h1>
+  <hr>
+  <form class="" action="" method="post" ng-init="n1=0;n2=0">
+    Ingrese u nnumero : <input type="number" ng-model="n1">
+    Ingrese el segundo numero : <input type="number" ng-model="n2">
+    <label>La suma de los dos numeros es: {{ n1 + n2 }}</label>
+  </form>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+  </script>
+</body>
+</html>

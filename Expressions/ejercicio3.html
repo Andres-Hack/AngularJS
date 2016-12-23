@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Expreciones 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <!--
+  EN ALGUNOS CASOS DEPENDIENDPO EL NAVEGADOR QUE TENGAMOS Y LA MAQUINA QUE UTILICEMOS CUNAOD ENTREMOS A UNA URL
+  O UNA PLANTLLA HTML QUE NOSOSTROS CREEMOS, PUEDE TARDAR EN CARGAR TODO LOS COMPONENTES COMO SER ETIQUETAS Y VALORES
+  QUE LO COLOCAMOS COMO {{5+5}} Y DESPUES DE TIEMPO POR LA LENTITUD DEL NAVEGADOR O DEL EUIPO RECIEN RELIZARA LA SUMA
+  ES POR ESO QUE TANBIEN TENEMOS LA SIGUIENTE TECNICA:
+  -->
+</head>
+<body>
+  <h1>SUMA DE DOS NUMEROS OCULTOS</h1>
+  <hr>
+  <form class="" action="" method="post" ng-init="n1=0;n2=0">
+    Ingrese u nnumero : <input type="number" ng-model="n1"><br>
+    Ingrese el segundo numero : <input type="number" ng-model="n2"><br><hr>
+    La suma de los dos numeros es:   <label ng-bind="n1+n2"></label>
+  </form>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+  </script>
+</body>
+</html>
