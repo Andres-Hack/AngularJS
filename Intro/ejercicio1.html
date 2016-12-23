@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!-- ESTE ES EJEMPLO INTRODUCTORIO DE ANGULAR JS DONDE APRENDEREMOS LOS
+PASOS MAS IMPORTANTES PARA HACER CORRER NUESTRO PRIMER PROYECTO-->
+
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <title>Introduccion a AngularJS</title>
+</head>
+<body>
+  <!-- COMO ESTAMOS TRABAJANDO EN HMTL5 DEBEMOS DE SEGUIR SUS REGLAS DONDE NOS DICE,
+QUE UN SCRIPT EN HTML5 DEBE SEGUIR ESTAS ETIQUETAS:
+
+* HEADER
+* NAV
+* ARTICLE
+* SECCION
+* FOOTER
+
+EN ALGUNOS CASOS OVIAREMOS ALGUNOS PERO ESO NO DEBERIA SER LA MEJOR OPCION, BUENO EMPEZAMOS :
+
+-->
+<header>
+<h1>Este es nuestro primer programa en Angular JS</h1>
+<hr>
+</header>
+
+  <h1>Este es una suma: {{5+5}}</h1>
+
+<footer>
+
+</footer>
+
+<script type="text/javascript">
+  var app = angular.module('myApp', []);
+</script>
+
+</body>
+</html>
