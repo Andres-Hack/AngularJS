@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directivas 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <!--
+    EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
+  -->
+</head>
+<body>
+  <div class="" ng-controller="myCtrl1">
+    <h2>Primera directiva </h2>
+    <p>Este es mi nombre {{nombre}}</p>
+  </div>
+  <hr>
+  <div class="" ng-controller="myCtrl2">
+    <h2>Segunda directiva </h2>
+    <p ng-bind="dato1+' '+dato2"></p>
+  </div>
+  <hr>
+  <div class="" ng-init="nombres=['Andres', 'Lucas', 'Pedro', 'Juan', 'Carlos', 'Jose']">
+    <h2>Tercera directiva </h2>
+    <ul>
+      <li ng-repeat="x in nombres">{{x}}</li>
+    </ul>
+  </div>
+  <hr>
+  <div class="" ng-init="valores=[
+      {n1:'Bolivia', n2:'La Paz', n3:'5.545'},
+      {n1:'Colombia', n2:'Bogota', n3:'15.545'},
+      {n1:'Venezuela', n2:'Caracas', n3:'5.545'},
+      {n1:'Australia', n2:'Citney', n3:'7.545'}
+    ]">
+    <h2>Cuarta directiva </h2>
+    <ul>
+      <li ng-repeat="x in valores">{{x.n1+' de '+x.n2+' con '+x.n3+' personas'}}</li>
+    </ul>
+
+  </div>
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl1', function($scope) {
+      $scope.nombre = "Andres Mamani Perez";
+    });
+    app.controller('myCtrl2', function($scope) {
+      $scope.dato2 = "HTTP";
+      $scope.dato1 = "AngularJS";
+    });
+
+  </script>
+
+</body>
+</html>

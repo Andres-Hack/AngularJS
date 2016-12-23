@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Expreciones 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+  <h1>Concatenacion de String</h1>
+  <hr>
+  <div class="" ng-controller="myCtrl">
+    <h2>Mi nombre completo es {{nombre+' '+apellido}}</h2>
+  </div>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+      $scope.nombre = 'Andres Richard';
+      $scope.apellido = 'Mamani Perez';
+    });
+  </script>
+</body>
+</html>
