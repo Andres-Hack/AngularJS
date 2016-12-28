@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directivas 5</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <!--
+    EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
+  -->
+</head>
+<body style="background: silver">
+  <div class="" ng-controller="myDir">
+    <h2>directiva por comentario</h2>
+    <p ng-bind="titulo"></p>
+    <hr>
+  </div>
+
+  <!-- directive: por-Comentario -->
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('myDir', function($scope) {
+      $scope.titulo = "Este es un ejemplo con directivas ṕor Comentarios 'M'.";
+    });
+
+    /*
+    ESTE ES UNA DIRECTIVA PERSONALIZADA POR COMENTARIO QUE TIENE EL NOMBRE DE "porComentario"
+    donde se lo puede incrustar una etiqueta html pero a dieferencia de los demas aqui debes de
+    comentario personales con unn solo comentario, increible
+    aumentar una linea en tu objeto que es "replace: true" donde aqui estas habilitando el
+    pero cierto !!.
+
+    */
+    app.directive('porComentario', function(){
+      return{
+        restrict: "M",
+        replace: true,
+        template: "<h1>ESte es una directiva por comentario, donde colocamos eqiquetas HTML y se vee cool!!.</h1>"
+      }
+    });
+
+  </script>
+</body>
+</html>

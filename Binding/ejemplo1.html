@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Binding 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <!--
+    EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
+  -->
+</head>
+<body style="background: silver">
+  <div class="" ng-controller="myCtrl">
+    <h2>Ejemplo de Model</h2>
+    <p ng-bind="titulo"></p>
+    <hr>
+    <form method="post" name="formulario">
+      <input type="text" name="" value="" ng-model="texto">
+      <strong ng-bind="nombre"></strong>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+      $scope.titulo = "Este es un ejemplo Binding.";
+    });
+
+
+
+  </script>
+</body>
+</html>

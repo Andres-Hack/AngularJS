@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directivas 3</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <!--
+    EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
+  -->
+</head>
+<body style="background: silver">
+  <div class="" ng-controller="myDir">
+    <h2>Primera directiva </h2>
+    <p ng-bind="titulo"></p>
+    <hr>
+  </div>
+  <por-Etiqueta></por-Etiqueta>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('myDir', function($scope) {
+      $scope.titulo = "Este es un ejemplo con directivas personales por etiqueta 'E'.";
+    });
+
+    /*
+    ESTE ES UNA DIRECTIVA PERSONALIZADA POR ATRIBUTO QU ETIENE EL NOMBRE DE "porEtiqueta"
+    donde se lo puede incrustar una etiqueta html personales.
+
+    */
+    app.directive('porEtiqueta', function(){
+      return{
+        restrict: "E",
+        template: "<h1>Este es un mensaje de una directiva por Etiquetas personalizadas en HTML .</h1>"
+      }
+    });
+
+  </script>
+
+</body>
+</html>

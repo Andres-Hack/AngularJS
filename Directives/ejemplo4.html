@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directivas 4</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <!--
+    EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
+  -->
+</head>
+<body style="background: silver">
+  <div class="" ng-controller="myDir">
+    <h2>Primera directiva </h2>
+    <p ng-bind="titulo"></p>
+    <hr>
+  </div>
+
+  <div class="por-Clase">
+
+  </div>
+
+  <script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('myDir', function($scope) {
+      $scope.titulo = "Este es un ejemplo con directivas personales por Clase 'C'.";
+    });
+
+    /*
+    ESTE ES UNA DIRECTIVA PERSONALIZADA POR CLSAE QUE TIENE EL NOMBRE DE "porClase"
+    donde se lo puede incrustar una etiqueta html personales.
+
+    */
+    app.directive('porClase', function(){
+      return{
+        restrict: "C",
+        template: "<h1>ESte es una directiva por clase, donde colocamos eqiquetas HTML por Clases .</h1>"
+      }
+    });
+
+  </script>
+</body>
+</html>
