@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Binding 1</title>
+  <title>Controller 3</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
   <!--
@@ -14,25 +14,18 @@
 </head>
 <body style="background: silver">
   <div class="" ng-controller="myCtrl">
-    <h2>Ejemplo de Binding</h2>
+    <h2>Ejemplo de Controladores</h2>
     <p ng-bind="titulo"></p>
-    <hr>
-    <form method="post" name="formulario">
-      <input type="text" name="" value="" ng-model="nombre"><br><br>
-      <strong ng-bind="nombre"></strong>
+    <form method="post">
+      Nombre : <input type="text" placeholder="Nombre Completo ... " ng-model="nombre">
+      Apellido : <input type="text" placeholder="Apellido Completo ... " ng-model="apellido">
+      <br>
+      <hr>
+      <strong>el nombre completo es {{funcion()}}</strong>
     </form>
   </div>
 
-  <script type="text/javascript">
-    var app = angular.module('myApp', []);
+  <script src="namesController.js"></script>
 
-    app.controller('myCtrl', function($scope) {
-      $scope.titulo = "Este es un ejemplo Binding.";
-      $scope.nombre = "Nombre y Apellido";
-    });
-
-
-
-  </script>
 </body>
 </html>

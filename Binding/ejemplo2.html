@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Binding 1</title>
+  <title>Binding 2</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
   <!--
@@ -13,14 +13,10 @@
 
 </head>
 <body style="background: silver">
-  <div class="" ng-controller="myCtrl">
+  <div class="" ng-controller="myCtrl" ng-init="nombre='Venta Realizada'" >
     <h2>Ejemplo de Binding</h2>
     <p ng-bind="titulo"></p>
-    <hr>
-    <form method="post" name="formulario">
-      <input type="text" name="" value="" ng-model="nombre"><br><br>
-      <strong ng-bind="nombre"></strong>
-    </form>
+    <strong ng-click="anular()" ng-dblclick="aceptar()" ng-bind="nombre"></strong>
   </div>
 
   <script type="text/javascript">
@@ -28,7 +24,12 @@
 
     app.controller('myCtrl', function($scope) {
       $scope.titulo = "Este es un ejemplo Binding.";
-      $scope.nombre = "Nombre y Apellido";
+      $scope.anular = function(){
+        $scope.nombre = "Rechazado";
+      }
+      $scope.aceptar = function(){
+        $scope.nombre = "Venta Realizada";
+      }
     });
 
 

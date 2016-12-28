@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Filtros 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <!--
+  AQUI ENTRARA LA PARTE DE ESTILOS CON BOOTSTRAP PARA QUE LA PARTE DE HTML NO SE VEA TAN FEO COMO
+  LO ESTUVIMOS HACIENDO
+  -->
+  <!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!--
+    EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
+  -->
+
+<!--
+AngularJS provee filtros que transforman a los datos como ser:
+
+* currency : Formatear un numero a un formato de moneda.
+* date : Formatea una fecha a una forma especifica.
+* filter : Selecciona un subconjuto de elementos de un Array.
+* json : Dar forma a un objeto a una cadena JSON.
+* limitTo : Limita un Array/String a un numero especificos.
+* lowercase : Formatea un string para minuscula.
+* number : coloca u nString a numero.
+* orderBy : Ordeba el String en orden que nosotros querramos.
+* uppercase : Formatea un tipo String a Mayuscula.
+-->
+
+</head>
+<body>
+
+  <div class="" ng-controller="myCtrl">
+
+    <p ng-bind="titulo"></p><hr>
+
+    <h1>Este texto estara en mayuscula : {{valor2 | uppercase}}</h1>
+    <h1>Este texto estara en minusculas : {{valor1 | lowercase}}</h1><hr>
+
+  </div>
+
+  <script type="text/javascript">
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+    $scope.titulo = "Este es un ejemplo de filtros para el caso de upercase y lowercase.";
+    $scope.valor1 = "CuaDrado";
+    $scope.valor2 = "ManDaRINA";
+  });
+  </script>
+
+</body>
+</html>
