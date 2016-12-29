@@ -4,49 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Servicios 3</title>
+  <title>Tablas 1</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
   <!--
   AQUI ENTRARA LA PARTE DE ESTILOS CON BOOTSTRAP PARA QUE LA PARTE DE HTML NO SE VEA TAN FEO COMO
   LO ESTUVIMOS HACIENDO
   -->
   <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
   <!--
     EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
   -->
 </head>
-
 <body>
 
   <div ng-controller="myCtrl">
-
-  <p>El tiempo es:</p>
-
-  <h1>{{theTime}}</h1>
-
+  <div class="jumbotron">
+    <h1 ng-bind="titulo"></h1>
   </div>
-
-  <p>El $interval sirve para que podamos ver el tiempo actual en el que esta el servidor.</p>
-
+  <table class="table table-hover">
+    <tr>
+      <strong><th ng-click="MyOrderBy('Name')">Nombre</th></strong>
+      <strong><th ng-click="MyOrderBy('Country')">Ciudad</th></strong>
+    </tr>
+    <tr ng-repeat="x in contenido | orderBy : ordenar">
+      <td ng-bind="x.Name"></td>
+      <td ng-bind="x.Country"></td>
+    </tr>
+  </table>
+  </div>
   <script>
   var app = angular.module('myApp', []);
-  app.controller('myCtrl', function($scope, $interval) {
-    $scope.theTime = new Date().toLocaleTimeString();
-    $interval(function () {
-        $scope.theTime = new Date().toLocaleTimeString();
-    }, 1000);
+  app.controller('myCtrl', function($scope, $http) {
+    $scope.titulo = "Manejo de tablas con HTTP y conponentes JSON y ademas con algunos filtros";
+    $http.get("datos.json").then(function (response) {
+      $scope.contenido = response.data.records;
+    });
+    $scope.MyOrderBy = function(e) {
+      $scope.ordenar = e;
+    }
   });
   </script>
-
-
 </body>
 </html>

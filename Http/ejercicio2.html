@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Servicios 3</title>
+  <title>HTTP 2</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
   <!--
@@ -23,27 +23,46 @@
   <!--
     EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
   -->
+
+  <!--
+
+Propiedades
+La respuesta del servidor es un objeto con estas propiedades:
+
+* .config    : El objeto utilizado para generar la solicitud.
+* .data      : Una cadena o un objeto que lleva la respuesta del servidor.
+* .headers   : Una función a utilizar para obtener información de encabezado.
+* .status    : Un número que define el estado HTTP.
+* .statusText :  Una cadena que define el estado HTTP.
+
+  -->
 </head>
 
 <body>
 
   <div ng-controller="myCtrl">
+  <div class="jumbotron">
+    <h1 ng-bind="titulo"></h1>
+  </div>
 
-  <p>El tiempo es:</p>
-
-  <h1>{{theTime}}</h1>
+  <h2><p>Estos son los datos de Hoy :</p></h2>
+  <h3>Contenido : {{contenido}}</h3><hr>
+  <h3>Cabecera : {{cabecera}}</h3><hr>
+  <h3>Estado del Codigo : {{estadoCodigo}}</h3><hr>
+  <h3>Estado del Text : {{estadoText}}</h3><hr>
 
   </div>
 
-  <p>El $interval sirve para que podamos ver el tiempo actual en el que esta el servidor.</p>
-
   <script>
   var app = angular.module('myApp', []);
-  app.controller('myCtrl', function($scope, $interval) {
-    $scope.theTime = new Date().toLocaleTimeString();
-    $interval(function () {
-        $scope.theTime = new Date().toLocaleTimeString();
-    }, 1000);
+  app.controller('myCtrl', function($scope, $http) {
+  $scope.titulo = "Mensaje de HTTP cona las propiedades";
+  $http.get("welcome.htm").then(function(response) {
+          $scope.contenido = response.data;
+          $scope.cabecera = response.header;
+          $scope.estadoCodigo = response.status;
+          $scope.estadoText = response.statusText;
+      });
   });
   </script>
 

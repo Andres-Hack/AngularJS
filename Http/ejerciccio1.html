@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Servicios 3</title>
+  <title>HTTP 1</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
   <!--
@@ -23,27 +23,40 @@
   <!--
     EN ESTE EJEMPLO VEREMOS LAS CLASES DE DIR5ECTIVAS SIMPLES QUE HAY EN EL MUNDO DE ANGULAR JS
   -->
+
+  <!--
+  El método .get es un método de acceso directo del servicio $ http. Existen varios métodos de acceso directo:
+
+  * .delete()
+  * .get()
+  * .head()
+  * .jsonp()
+  * .patch()
+  * .post()
+  * .put()
+
+  -->
 </head>
 
 <body>
 
   <div ng-controller="myCtrl">
+  <div class="jumbotron">
+    <h1 ng-bind="titulo"></h1>
+  </div>
 
-  <p>El tiempo es:</p>
-
-  <h1>{{theTime}}</h1>
+  <h2><p>El mensaje de hoy es :</p></h2>
+  <h3>{{myWelcome}}</h3>
 
   </div>
 
-  <p>El $interval sirve para que podamos ver el tiempo actual en el que esta el servidor.</p>
-
   <script>
   var app = angular.module('myApp', []);
-  app.controller('myCtrl', function($scope, $interval) {
-    $scope.theTime = new Date().toLocaleTimeString();
-    $interval(function () {
-        $scope.theTime = new Date().toLocaleTimeString();
-    }, 1000);
+  app.controller('myCtrl', function($scope, $http) {
+  $scope.titulo = "Mensaje de HTTP";
+  $http.get("welcome.htm").then(function(response) {
+          $scope.myWelcome = response.data;
+      });
   });
   </script>
 
