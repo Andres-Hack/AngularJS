@@ -1,0 +1,43 @@
+
+Eventos de AngularJS
+Puede agregar eventos en AngularJS a sus elementos HTML utilizando una o más de estas directivas:
+
+**  ng-blur
+**  ng-change
+**  ng-click
+**  ng-copy
+**  ng-cut
+**  ng-dblclick
+**  ng-focus
+**  ng-keydown
+**  ng-keypress
+**  ng-keyup
+**  ng-mousedown
+**  ng-mouseenter
+**  ng-mouseleave
+**  ng-mousemove
+**  ng-mouseover
+**  ng-mouseup
+**  ng-paste
+
+
+Las directivas de eventos nos permiten ejecutar funciones AngularJS en determinados eventos de usuario.
+
+Un evento AngularJS no sobrescribirá un evento HTML, ambos eventos se ejecutarán.
+
+Mouse Events
+Los eventos del mouse se producen cuando el cursor se mueve sobre un elemento, en este orden:
+
+1. ng-mouseenter
+2. ng-mouseover
+3. ng-mousemove
+4. ng-mouseleave
+
+
+O cuando se hace clic en un elemento del ratón, en este orden:
+
+1. ng-mousedown
+2. ng-mouseup
+3. ng-click
+
+Puede agregar eventos de mouse en cualquier elemento HTML.
